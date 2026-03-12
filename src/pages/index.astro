@@ -1,11 +1,313 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+	title="Héctor García | Portfolio"
+	description="Portfolio personal de Héctor García: experiencia, proyectos, stack y contacto."
+>
+	<div class="site-bg">
+		<header class="topbar">
+			<div class="shell topbar-inner">
+				<a href="#inicio" class="brand" aria-label="Ir al inicio">
+					&lt;dev /&gt;
+				</a>
+				<nav aria-label="Principal" class="menu-wrap">
+					<ul class="menu">
+						<li><a href="#inicio">Inicio</a></li>
+						<li><a href="#sobre-mi">Sobre mi</a></li>
+						<li><a href="#experiencia">Experiencia</a></li>
+						<li><a href="#proyectos">Proyectos</a></li>
+						<li><a href="#skills">Skills</a></li>
+						<li><a href="#contacto">Contacto</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<main>
+			<section id="inicio" class="section hero shell">
+				<p class="section-index">Hola, me llamo</p>
+				<h1>
+					Héctor García
+				</h1>
+				<p class="lead">
+					Desarrollador full-stack apasionado por crear experiencias web modernas,
+					accesibles y con atencion al detalle.
+				</p>
+				<div class="hero-actions">
+					<a class="btn btn-primary" href="#proyectos">Ver proyectos</a>
+					<a class="btn btn-ghost" href="#contacto">Contacto</a>
+				</div>
+				<a class="scroll-hint" href="#sobre-mi" aria-label="Ir a la seccion sobre mi">↓</a>
+			</section>
+
+			<section id="sobre-mi" class="section shell two-col">
+				<div>
+					<p class="section-index">01.</p>
+					<h2>Sobre mi</h2>
+					<p>
+						Soy un desarrollador web con pasion por construir productos digitales que
+						combinan funcionalidad con un diseno excepcional. Me especializo en el
+						ecosistema JavaScript/TypeScript y disfruto trabajar tanto en el frontend
+						como en el backend.
+					</p>
+					<p>
+						Cuando no estoy programando, me gusta explorar nuevas tecnologias,
+						contribuir a proyectos open source y compartir lo que aprendo con la
+						comunidad.
+					</p>
+					<p>
+						Actualmente busco oportunidades donde pueda aportar valor creando
+						soluciones web modernas y escalables.
+					</p>
+				</div>
+				<div class="photo-wrap" aria-hidden="true">
+					<div class="photo-card">tu-foto.jpg</div>
+				</div>
+			</section>
+
+			<section id="experiencia" class="section shell">
+				<p class="section-index">02.</p>
+				<h2>Experiencia</h2>
+				<div class="experience-list">
+					<article class="experience-item">
+						<p class="period">2023 - Presente</p>
+						<div>
+							<h3>Senior Frontend Developer</h3>
+							<p class="company">Empresa Ejemplo</p>
+							<p>
+								Desarrollo de aplicaciones web con React, TypeScript y Tailwind.
+								Liderazgo tecnico del equipo frontend.
+							</p>
+							<ul class="tags">
+								<li>React</li>
+								<li>TypeScript</li>
+								<li>Tailwind</li>
+								<li>Next.js</li>
+							</ul>
+						</div>
+					</article>
+					<article class="experience-item">
+						<p class="period">2021 - 2023</p>
+						<div>
+							<h3>Full Stack Developer</h3>
+							<p class="company">Otra Empresa</p>
+							<p>
+								Construccion de APIs REST y aplicaciones SPA. Implementacion de CI/CD
+								y testing automatizado.
+							</p>
+							<ul class="tags">
+								<li>Node.js</li>
+								<li>React</li>
+								<li>PostgreSQL</li>
+								<li>Docker</li>
+							</ul>
+						</div>
+					</article>
+					<article class="experience-item">
+						<p class="period">2019 - 2021</p>
+						<div>
+							<h3>Junior Developer</h3>
+							<p class="company">Startup XYZ</p>
+							<p>
+								Desarrollo de features para plataforma SaaS. Colaboracion en equipo
+								agil con sprints de dos semanas.
+							</p>
+							<ul class="tags">
+								<li>JavaScript</li>
+								<li>Vue.js</li>
+								<li>Firebase</li>
+							</ul>
+						</div>
+					</article>
+				</div>
+			</section>
+
+			<section id="proyectos" class="section shell">
+				<p class="section-index">03.</p>
+				<h2>Proyectos</h2>
+				<div class="projects-grid">
+					<article class="project-card">
+						<div class="project-head">
+							<h3>Rural Connect</h3>
+							<div class="project-links" aria-label="Enlaces del proyecto">
+								<a href="#" aria-label="Repositorio de Rural Connect">
+									<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.1.68-.22.68-.48v-1.89c-2.78.6-3.37-1.18-3.37-1.18-.46-1.16-1.1-1.46-1.1-1.46-.9-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.88 1.5 2.3 1.07 2.86.82.09-.64.35-1.08.63-1.32-2.22-.25-4.56-1.11-4.56-4.92 0-1.09.39-1.98 1.02-2.68-.1-.25-.44-1.27.1-2.64 0 0 .83-.27 2.73 1.02a9.4 9.4 0 0 1 4.96 0c1.9-1.29 2.72-1.02 2.72-1.02.54 1.37.2 2.39.1 2.64.64.7 1.02 1.59 1.02 2.68 0 3.82-2.34 4.67-4.57 4.91.36.31.68.92.68 1.86v2.76c0 .27.18.59.69.48A10 10 0 0 0 12 2Z"/></svg>
+								</a>
+								<a href="#" aria-label="Demo de Rural Connect">
+									<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h6v2H7v10h10v-4h2v6H5V5Z"/></svg>
+								</a>
+							</div>
+						</div>
+						<p>
+							Una aplicacion web completa para gestion de tareas con autenticacion,
+							tiempo real y notificaciones push.
+						</p>
+						<ul class="tags">
+							<li>React</li>
+							<li>Node.js</li>
+							<li>MySQL</li>
+							<li>Prisma</li>
+						</ul>
+					</article>
+
+					<article class="project-card">
+						<div class="project-head">
+							<h3>Proyecto Dos</h3>
+							<div class="project-links" aria-label="Enlaces del proyecto">
+								<a href="#" aria-label="Repositorio de Proyecto Dos">
+									<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.1.68-.22.68-.48v-1.89c-2.78.6-3.37-1.18-3.37-1.18-.46-1.16-1.1-1.46-1.1-1.46-.9-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.88 1.5 2.3 1.07 2.86.82.09-.64.35-1.08.63-1.32-2.22-.25-4.56-1.11-4.56-4.92 0-1.09.39-1.98 1.02-2.68-.1-.25-.44-1.27.1-2.64 0 0 .83-.27 2.73 1.02a9.4 9.4 0 0 1 4.96 0c1.9-1.29 2.72-1.02 2.72-1.02.54 1.37.2 2.39.1 2.64.64.7 1.02 1.59 1.02 2.68 0 3.82-2.34 4.67-4.57 4.91.36.31.68.92.68 1.86v2.76c0 .27.18.59.69.48A10 10 0 0 0 12 2Z"/></svg>
+								</a>
+								<a href="#" aria-label="Demo de Proyecto Dos">
+									<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h6v2H7v10h10v-4h2v6H5V5Z"/></svg>
+								</a>
+							</div>
+						</div>
+						<p>
+							Plataforma e-commerce con carrito de compras, pagos integrados y panel
+							de administracion.
+						</p>
+						<ul class="tags">
+							<li>Next.js</li>
+							<li>Stripe</li>
+							<li>Tailwind</li>
+							<li>Prisma</li>
+						</ul>
+					</article>
+
+					<article class="project-card">
+						<div class="project-head">
+							<h3>Proyecto Tres</h3>
+							<div class="project-links" aria-label="Enlaces del proyecto">
+								<a href="#" aria-label="Repositorio de Proyecto Tres">
+									<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.1.68-.22.68-.48v-1.89c-2.78.6-3.37-1.18-3.37-1.18-.46-1.16-1.1-1.46-1.1-1.46-.9-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.88 1.5 2.3 1.07 2.86.82.09-.64.35-1.08.63-1.32-2.22-.25-4.56-1.11-4.56-4.92 0-1.09.39-1.98 1.02-2.68-.1-.25-.44-1.27.1-2.64 0 0 .83-.27 2.73 1.02a9.4 9.4 0 0 1 4.96 0c1.9-1.29 2.72-1.02 2.72-1.02.54 1.37.2 2.39.1 2.64.64.7 1.02 1.59 1.02 2.68 0 3.82-2.34 4.67-4.57 4.91.36.31.68.92.68 1.86v2.76c0 .27.18.59.69.48A10 10 0 0 0 12 2Z"/></svg>
+								</a>
+							</div>
+						</div>
+						<p>
+							API REST documentada con OpenAPI para un sistema de reservas con rate
+							limiting y cache.
+						</p>
+						<ul class="tags">
+							<li>Express</li>
+							<li>TypeScript</li>
+							<li>Redis</li>
+							<li>Docker</li>
+						</ul>
+					</article>
+
+					<article class="project-card">
+						<div class="project-head">
+							<h3>Proyecto Cuatro</h3>
+							<div class="project-links" aria-label="Enlaces del proyecto">
+								<a href="#" aria-label="Repositorio de Proyecto Cuatro">
+									<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.1.68-.22.68-.48v-1.89c-2.78.6-3.37-1.18-3.37-1.18-.46-1.16-1.1-1.46-1.1-1.46-.9-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.88 1.5 2.3 1.07 2.86.82.09-.64.35-1.08.63-1.32-2.22-.25-4.56-1.11-4.56-4.92 0-1.09.39-1.98 1.02-2.68-.1-.25-.44-1.27.1-2.64 0 0 .83-.27 2.73 1.02a9.4 9.4 0 0 1 4.96 0c1.9-1.29 2.72-1.02 2.72-1.02.54 1.37.2 2.39.1 2.64.64.7 1.02 1.59 1.02 2.68 0 3.82-2.34 4.67-4.57 4.91.36.31.68.92.68 1.86v2.76c0 .27.18.59.69.48A10 10 0 0 0 12 2Z"/></svg>
+								</a>
+								<a href="#" aria-label="Demo de Proyecto Cuatro">
+									<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h6v2H7v10h10v-4h2v6H5V5Z"/></svg>
+								</a>
+							</div>
+						</div>
+						<p>
+							Dashboard de analytics con visualizaciones interactivas y exportacion
+							de datos en multiples formatos.
+						</p>
+						<ul class="tags">
+							<li>React</li>
+							<li>D3.js</li>
+							<li>Python</li>
+							<li>FastAPI</li>
+						</ul>
+					</article>
+				</div>
+			</section>
+
+			<section id="skills" class="section shell">
+				<p class="section-index">04.</p>
+				<h2>Skills &amp; Stack</h2>
+				<div class="skills-grid">
+					<div>
+						<h3>Frontend</h3>
+						<ul>
+							<li>React</li>
+							<li>TypeScript</li>
+							<li>Next.js</li>
+							<li>Astro</li>
+							<li>Tailwind CSS</li>
+							<li>Framer Motion</li>
+						</ul>
+					</div>
+					<div>
+						<h3>Backend</h3>
+						<ul>
+							<li>Node.js</li>
+							<li>Express</li>
+							<li>PostgreSQL</li>
+							<li>MongoDB</li>
+							<li>REST APIs</li>
+							<li>GraphQL</li>
+						</ul>
+					</div>
+					<div>
+						<h3>Herramientas</h3>
+						<ul>
+							<li>Git</li>
+							<li>Docker</li>
+							<li>CI/CD</li>
+							<li>Figma</li>
+							<li>VS Code</li>
+							<li>Linux</li>
+						</ul>
+					</div>
+					<div>
+						<h3>Otros</h3>
+						<ul>
+							<li>Testing</li>
+							<li>Agile/Scrum</li>
+							<li>SEO</li>
+							<li>Accesibilidad</li>
+							<li>Performance</li>
+							<li>Open Source</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<section class="section shell center-block">
+				<p class="section-index">05.</p>
+				<h2>Curriculum</h2>
+				<p class="lead narrow">
+					Descarga mi CV en formato PDF para ver mi experiencia completa y
+					formacion.
+				</p>
+				<a href="/cv.pdf" class="btn btn-primary" download>Descargar CV</a>
+			</section>
+
+			<section id="contacto" class="section shell center-block contact">
+				<p class="section-index">06.</p>
+				<h2>Contacto</h2>
+				<p class="lead narrow">
+					Tienes un proyecto en mente o simplemente quieres saludar? Mi bandeja de
+					entrada esta siempre abierta.
+				</p>
+				<a class="btn btn-ghost strong" href="mailto:tu@email.com">Escribeme</a>
+				<div class="socials" aria-label="Redes sociales">
+					<a href="#" aria-label="GitHub">
+						<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.1.68-.22.68-.48v-1.89c-2.78.6-3.37-1.18-3.37-1.18-.46-1.16-1.1-1.46-1.1-1.46-.9-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.88 1.5 2.3 1.07 2.86.82.09-.64.35-1.08.63-1.32-2.22-.25-4.56-1.11-4.56-4.92 0-1.09.39-1.98 1.02-2.68-.1-.25-.44-1.27.1-2.64 0 0 .83-.27 2.73 1.02a9.4 9.4 0 0 1 4.96 0c1.9-1.29 2.72-1.02 2.72-1.02.54 1.37.2 2.39.1 2.64.64.7 1.02 1.59 1.02 2.68 0 3.82-2.34 4.67-4.57 4.91.36.31.68.92.68 1.86v2.76c0 .27.18.59.69.48A10 10 0 0 0 12 2Z"/></svg>
+					</a>
+					<a href="#" aria-label="LinkedIn">
+						<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5a1.56 1.56 0 1 1 0-3.12 1.56 1.56 0 0 1 0 3.12ZM8.5 10H5.4v9h3.1v-9Zm4.95 0h-2.98v9h3.1v-4.74c0-1.25.24-2.47 1.8-2.47 1.54 0 1.56 1.44 1.56 2.55V19H20v-5.28c0-2.6-.56-4.6-3.6-4.6-1.46 0-2.45.8-2.95 1.57V10Z"/></svg>
+					</a>
+					<a href="mailto:tu@email.com" aria-label="Email">
+						<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 2v.01L12 12l8-4.99V7H4Zm16 10V9.2l-7.47 4.67a1 1 0 0 1-1.06 0L4 9.2V17h16Z"/></svg>
+					</a>
+				</div>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<p>Diseñado y desarrollado por <strong>Héctor García</strong> - 2026</p>
+		</footer>
+	</div>
 </Layout>
