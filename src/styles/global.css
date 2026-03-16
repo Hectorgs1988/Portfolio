@@ -27,6 +27,7 @@ body {
 	background: var(--bg);
 	color: var(--text);
 	line-height: 1.65;
+	overflow-x: hidden;
 }
 
 a {
@@ -37,13 +38,10 @@ a {
 .site-bg {
 	position: relative;
 	background-color: var(--bg);
-	background-image: linear-gradient(var(--line) 1px, transparent 1px),
-		linear-gradient(90deg, var(--line) 1px, transparent 1px);
-	background-size: 44px 44px;
 }
 
 .shell {
-	width: min(980px, calc(100% - 2.5rem));
+	width: min(1200px, calc(100% - 4rem));
 	margin-inline: auto;
 }
 
@@ -99,6 +97,41 @@ a {
 	outline: none;
 }
 
+.nav-toggle {
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	gap: 5px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0.35rem;
+	color: var(--text);
+}
+
+.nav-toggle span {
+	display: block;
+	width: 24px;
+	height: 2px;
+	background: currentColor;
+	border-radius: 2px;
+	transition: transform 250ms ease, opacity 250ms ease;
+	transform-origin: center;
+}
+
+.nav-toggle.is-open span:nth-child(1) {
+	transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.is-open span:nth-child(2) {
+	opacity: 0;
+	transform: scaleX(0);
+}
+
+.nav-toggle.is-open span:nth-child(3) {
+	transform: translateY(-7px) rotate(-45deg);
+}
+
 .section {
 	padding: 5.5rem 0;
 	border-top: 1px solid color-mix(in oklab, var(--line) 50%, transparent);
@@ -106,11 +139,19 @@ a {
 }
 
 .hero {
+	border-top: none;
+	padding: 0;
+	background-color: var(--bg);
+	background-image: linear-gradient(var(--line) 1px, transparent 1px),
+		linear-gradient(90deg, var(--line) 1px, transparent 1px);
+	background-size: 70px 70px;
+}
+
+.hero-shell {
 	min-height: calc(100vh - 74px);
 	display: grid;
 	align-content: center;
 	gap: 1rem;
-	border-top: none;
 	padding-top: 3rem;
 	padding-bottom: 3rem;
 }
@@ -274,7 +315,7 @@ p {
 }
 
 .experience-list {
-	border-top: 1px solid var(--line);
+	border-top: 1px solid color-mix(in oklab, var(--line) 55%, #4a5f8a);
 	margin-top: 2.5rem;
 }
 
@@ -283,7 +324,7 @@ p {
 	grid-template-columns: 170px 1fr;
 	gap: 2rem;
 	padding: 2rem 0;
-	border-bottom: 1px solid var(--line);
+	border-bottom: 1px solid color-mix(in oklab, var(--line) 55%, #4a5f8a);
 }
 
 .period {
@@ -343,6 +384,10 @@ p {
 .project-card:hover {
 	transform: translateY(-3px);
 	border-color: #3b4b6b;
+}
+
+.project-card .tags li {
+	color: var(--accent);
 }
 
 .project-head {
@@ -477,42 +522,145 @@ p {
 		width: min(980px, calc(100% - 1.4rem));
 	}
 
+	.nav-toggle {
+		display: flex;
+	}
+
 	.topbar-inner {
-		align-items: flex-start;
-		flex-direction: column;
-		padding: 0.9rem 0;
-		min-height: auto;
+		flex-direction: row;
+		align-items: center;
+		min-height: 64px;
+		padding: 0;
+	}
+
+	.menu-wrap {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		background: color-mix(in oklab, var(--bg) 97%, transparent);
+		backdrop-filter: blur(10px);
+		border-bottom: 1px solid var(--line);
+		overflow: hidden;
+		max-height: 0;
+		transition: max-height 300ms ease, padding 300ms ease;
+	}
+
+	.menu-wrap.nav-open {
+		max-height: 480px;
+		padding: 0.5rem 0 1rem;
 	}
 
 	.menu {
-		gap: 1rem;
-		font-size: 0.8rem;
+		flex-direction: column;
+		gap: 0;
+		font-size: 0.95rem;
+		white-space: normal;
+		padding: 0 1.5rem;
+	}
+
+	.menu li {
+		border-bottom: 1px solid color-mix(in oklab, var(--line) 60%, transparent);
+	}
+
+	.menu li:last-child {
+		border-bottom: none;
+	}
+
+	.menu a {
+		display: block;
+		padding: 0.85rem 0;
 	}
 
 	.section {
 		padding: 4rem 0;
-		scroll-margin-top: 120px;
+		scroll-margin-top: 80px;
 	}
 
-	.hero {
+	.hero-shell {
 		min-height: auto;
-		padding-top: 5rem;
+		padding-top: 2.7rem;
+		padding-bottom: 2.6rem;
 	}
 
 	h1 {
+		font-size: clamp(2.25rem, 12vw, 3.4rem);
 		max-width: 11ch;
+	}
+
+	h2 {
+		font-size: clamp(1.8rem, 8vw, 2.35rem);
+		margin-bottom: 1.5rem;
+	}
+
+	h3,
+	.project-head h3 {
+		font-size: clamp(1.35rem, 6.5vw, 1.8rem);
+	}
+
+	.lead {
+		font-size: clamp(1rem, 4.2vw, 1.28rem);
+	}
+
+	.hero-actions {
+		gap: 0.7rem;
+		flex-wrap: nowrap;
+	}
+
+	.hero-actions .btn {
+		flex: 0 1 auto;
+		padding: 0 1.1rem;
+		font-size: 0.85rem;
 	}
 
 	.experience-item {
 		grid-template-columns: 1fr;
 		gap: 1rem;
+		padding: 1.4rem 0;
+	}
+
+	.project-card {
+		padding: 1.1rem;
 	}
 
 	.skills-grid {
 		grid-template-columns: 1fr;
 	}
 
-	.project-head h3 {
-		font-size: 1.6rem;
+	.center-block {
+		padding-top: 4.6rem;
+		padding-bottom: 4.8rem;
+	}
+
+	.center-block .narrow {
+		max-width: 100%;
+	}
+}
+
+@media (max-width: 480px) {
+	.shell {
+		width: min(980px, calc(100% - 1rem));
+	}
+
+	.hero {
+		background-size: 52px 52px;
+	}
+
+	.section {
+		padding: 3.4rem 0;
+	}
+
+	.tags {
+		gap: 0.45rem;
+	}
+
+	.tags li {
+		font-size: 0.72rem;
+		padding: 0.2rem 0.48rem;
+	}
+
+	.footer {
+		font-size: 0.8rem;
+		padding-bottom: 1.8rem;
 	}
 }
