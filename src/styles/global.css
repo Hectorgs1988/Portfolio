@@ -279,7 +279,7 @@ p {
 }
 
 .experience-list {
-	border-top: 1px solid var(--line);
+	border-top: 1px solid color-mix(in oklab, var(--line) 55%, #4a5f8a);
 	margin-top: 2.5rem;
 }
 
@@ -288,7 +288,7 @@ p {
 	grid-template-columns: 170px 1fr;
 	gap: 2rem;
 	padding: 2rem 0;
-	border-bottom: 1px solid var(--line);
+	border-bottom: 1px solid color-mix(in oklab, var(--line) 55%, #4a5f8a);
 }
 
 .period {
@@ -348,6 +348,10 @@ p {
 .project-card:hover {
 	transform: translateY(-3px);
 	border-color: #3b4b6b;
+}
+
+.project-card .tags li {
+	color: var(--accent);
 }
 
 .project-head {
