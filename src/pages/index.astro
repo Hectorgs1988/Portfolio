@@ -12,7 +12,12 @@ import Layout from "../layouts/Layout.astro";
 				<a href="#inicio" class="brand" aria-label="Ir al inicio">
 					&lt;dev /&gt;
 				</a>
-				<nav aria-label="Principal" class="menu-wrap">
+				<button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+				<nav id="main-nav" aria-label="Principal" class="menu-wrap">
 					<ul class="menu">
 						<li><a href="#inicio">Inicio</a></li>
 						<li><a href="#sobre-mi">Sobre mi</a></li>
@@ -476,4 +481,25 @@ import Layout from "../layouts/Layout.astro";
 			</p>
 		</footer>
 	</div>
+
+	<script>
+		const toggle = document.querySelector('.nav-toggle');
+		const menuWrap = document.getElementById('main-nav');
+
+		if (toggle && menuWrap) {
+			toggle.addEventListener('click', () => {
+				const isOpen = menuWrap.classList.toggle('nav-open');
+				toggle.setAttribute('aria-expanded', String(isOpen));
+				toggle.classList.toggle('is-open', isOpen);
+			});
+
+			menuWrap.querySelectorAll('a').forEach((link) => {
+				link.addEventListener('click', () => {
+					menuWrap.classList.remove('nav-open');
+					toggle.setAttribute('aria-expanded', 'false');
+					toggle.classList.remove('is-open');
+				});
+			});
+		}
+	</script>
 </Layout>
