@@ -41,7 +41,7 @@ a {
 }
 
 .shell {
-	width: min(980px, calc(100% - 2.5rem));
+	width: min(1200px, calc(100% - 4rem));
 	margin-inline: auto;
 }
 
@@ -604,11 +604,13 @@ p {
 
 	.hero-actions {
 		gap: 0.7rem;
+		flex-wrap: nowrap;
 	}
 
 	.hero-actions .btn {
-		width: 100%;
-		max-width: 330px;
+		flex: 0 1 auto;
+		padding: 0 1.1rem;
+		font-size: 0.85rem;
 	}
 
 	.experience-item {
